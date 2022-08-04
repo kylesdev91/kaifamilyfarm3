@@ -2,7 +2,7 @@
   <div class="backdrop" @click="closeThankYou">
     <div class="modal" :class="{ sale: theme === 'sale' }">
       <Spinner  v-if="showSpinner"/>
-      <h1 class="thanks" v-if="showThankYou">Thank you for your order!!!</h1>
+      <h1 class="thanks" v-if="showThankYou">Thank you for your order!</h1>
     </div>
   </div>
 </template>
@@ -55,6 +55,7 @@ export default {
   border: none;
   padding: 0;
   font-size: 30px;
+  text-align: center;
 }
 .modal p {
   font-style: normal;
