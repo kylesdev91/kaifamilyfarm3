@@ -41,7 +41,7 @@ import CartItemCard from '../components/cart/CartItemCard.vue';
 import CartSummaryPaymentCard from '../components/cart/CartSummaryPaymentCard.vue';
 // import items from '../data/items';
 import axios from 'axios';
-import ThankYou from '../components/ThankYou.vue';
+import ThankYou from '../components/products/ThankYou.vue';
 export default {
   components: {
     CartItemCard,

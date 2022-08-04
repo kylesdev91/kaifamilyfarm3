@@ -52,7 +52,9 @@
 </template>
 
 <script>
+import Spinner from './components/products/Spinner.vue';
 export default {
+  components: { Spinner },
   mounted() {
     this.$store.commit('updateCartFromLocalStorage');
   },

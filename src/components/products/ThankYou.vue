@@ -1,18 +1,37 @@
 <template>
   <div class="backdrop" @click="closeThankYou">
     <div class="modal" :class="{ sale: theme === 'sale' }">
-      <h1>Thank you for your order!!!</h1>
+      <Spinner  v-if="showSpinner"/>
+      <h1 class="thanks" v-if="showThankYou">Thank you for your order!!!</h1>
     </div>
   </div>
 </template>
 
 <script>
+import Spinner from '@/components/products/Spinner.vue'
 export default {
+  components: {
+    Spinner
+  },
+  data() {
+    return {
+      showSpinner: false,
+      showThankYou: false
+    }
+  },
   methods: {
     closeThankYou() {
       this.$emit('close');
     },
   },
+   async mounted() {
+      this.showSpinner = true;
+      await new Promise(resolve => {
+        setTimeout(resolve, 2000)
+      })
+      this.showSpinner = false;
+      this.showThankYou = true;
+  }
 };
 </script>
 
@@ -35,10 +54,12 @@ export default {
   color: black;
   border: none;
   padding: 0;
+  font-size: 30px;
 }
 .modal p {
   font-style: normal;
 }
+
 
 /* sale styles */
 .modal.sale {
