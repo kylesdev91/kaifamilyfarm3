@@ -1,7 +1,7 @@
 <template>
   <div class="backdrop" @click="closeThankYou">
     <div class="modal" :class="{ sale: theme === 'sale' }">
-      <h1>Thank you for your order!</h1>
+      <h1>Thank you for your order!!!</h1>
     </div>
   </div>
 </template>
